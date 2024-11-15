@@ -61,7 +61,8 @@ class VisualizationDemo(object):
                 )
             if "instances" in predictions:
                 instances = predictions["instances"].to(self.cpu_device)
-                vis_output,polygons = visualizer.draw_instance_predictions(predictions=instances)
+                polygons = instances.pred_masks if instances.has("pred_masks") else None
+                vis_output = visualizer.draw_instance_predictions(predictions=instances)
 
         return predictions, vis_output, polygons
 
