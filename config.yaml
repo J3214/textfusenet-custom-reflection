@@ -57,7 +57,7 @@ MODEL:
   BACKBONE:
     FREEZE_AT: 2
     NAME: build_resnet_fpn_backbone
-  DEVICE: cuda
+  DEVICE: cpu
   FPN:
     FUSE_TYPE: sum
     IN_FEATURES:
@@ -267,8 +267,8 @@ MODEL:
     NAME: SemSegFPNHead
     NORM: GN
     NUM_CLASSES: 54
-  WEIGHTS: ./out_dir_r101/icdar2013_model/model_ic13_r101.pth
-OUTPUT_DIR: /content/gdrive/MyDrive/00.train/
+  WEIGHTS: ./model_0000599.pyh
+OUTPUT_DIR: ./output/
 SEED: -1
 SOLVER:
   AMP:

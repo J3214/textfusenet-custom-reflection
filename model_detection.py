@@ -29,6 +29,8 @@ def setup_cfg(args):
     cfg.MODEL.RETINANET.SCORE_THRESH_TEST = args.confidence_threshold
     cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = args.confidence_threshold
     cfg.MODEL.PANOPTIC_FPN.COMBINE.INSTANCES_CONFIDENCE_THRESH = args.confidence_threshold
+    # Set device to CPU only
+    cfg.MODEL.DEVICE = 'cpu'
     cfg.freeze()
     return cfg
 
@@ -66,7 +68,7 @@ def get_parser():
     parser.add_argument(
         "--confidence-threshold",
         type=float,
-        default=0.7,
+        default=0.5,
         help="Minimum score for instance predictions to be shown",
     )
     parser.add_argument(
