@@ -267,7 +267,7 @@ MODEL:
     NAME: SemSegFPNHead
     NORM: GN
     NUM_CLASSES: 54
-  WEIGHTS: ./model_0000599.pyh
+  WEIGHTS: ./model_0000599.pth
 OUTPUT_DIR: ./output/
 SEED: -1
 SOLVER:
